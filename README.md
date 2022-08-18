@@ -14,14 +14,14 @@ Macに直接インストールでも問題ないと思われます。その場�
 - New Relicに登録ができるメールアドレス
 
 ## 1 New Relicの登録
-[New Relicの登録](docs/ch1.md)
+[New Relicの登録](ch1.md)
 ## 2 New Relic infrastructure agentの説明とinstall
 [New Relic infrastructure agentの説明とinstall](docs/ch2.md)
 ## 3 Djangoのセットアップ、New Relic Python agentのinstall
-[Djangoのセットアップ](docs/ch3.md)
+[Djangoのセットアップ](ch3.md)
 ## 4 New Relic Python agent の説明
-[New Relic Python agent の説明とinstall](docs/ch4.md)
+[New Relic Python agent の説明とinstall](ch4.md)
 ## 5 New Relicのコンソールを眺める
-[New Relicのコンソールを眺める](docs/ch5.md)
+[New Relicのコンソールを眺める](ch5.md)
 ## よくある質問
-[よくある質問](docs/FAQ.md)
+[よくある質問](FAQ.md)
