@@ -1,0 +1,148 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: CloudFormation template.
+
+Resources:
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: "10.0.0.0/16"
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      InstanceTenancy: default
+      Tags:
+        - Key: Name
+          Value: "NRUG-demo-app"
+
+  Subnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      AvailabilityZone: "ap-northeast-1a"
+      CidrBlock: "10.0.1.0/24"
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: "NRUG-demo-app"
+
+  InternetGateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Key: Name
+          Value: "NRUG-demo-app"
+
+  AttachGateway:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      InternetGatewayId: !Ref InternetGateway
+      VpcId: !Ref VPC
+
+  RouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref VPC
+      Tags:
+        - Key: Name
+          Value: "NRUG-demo-app"
+
+  SubnetRouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref RouteTable
+      SubnetId: !Ref Subnet
+
+  CreateRouteTable:
+    Type: AWS::EC2::Route
+    DependsOn: AttachGateway
+    Properties:
+      DestinationCidrBlock: "0.0.0.0/0"
+      GatewayId: !Ref InternetGateway
+      RouteTableId: !Ref RouteTable
+
+  SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      VpcId: !Ref VPC
+      GroupName: "NRUG-demo-app"
+      GroupDescription: "NRUG-demo-app"
+      Tags:
+        - Key: Name
+          Value: "NRUG-demo-app"
+
+  SecurityGroupIngress:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !Ref SecurityGroup
+      IpProtocol: tcp
+      FromPort: 8000
+      ToPort: 8000
+      CidrIp: "0.0.0.0/0"
+      Description: "NRUG-demo-app"
+
+  SecurityGroupEgress:
+    Type: AWS::EC2::SecurityGroupEgress
+    Properties:
+      GroupId: !Ref SecurityGroup
+      IpProtocol: tcp
+      FromPort: 0
+      ToPort: 65535
+      CidrIp: "0.0.0.0/0"
+      Description: "NRUG-demo-app"
+
+  IAMRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      RoleName: "NRUG-demo-app"
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - ec2.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      Path: /
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore
+
+  InstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      InstanceProfileName: "NRUG-demo-app"
+      Path: "/"
+      Roles:
+      - !Ref IAMRole
+
+  EC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: "ami-0ecb2a61303230c9d"
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            VolumeType: gp2
+            VolumeSize: 8
+            DeleteOnTermination: true
+      NetworkInterfaces:
+        - SubnetId: !Ref Subnet
+          AssociatePublicIpAddress: false
+          GroupSet:
+             - !Ref SecurityGroup
+          DeviceIndex: '0'
+          DeleteOnTermination: true
+      DisableApiTermination: false
+      IamInstanceProfile: !Ref InstanceProfile
+      Tags:
+        - Key: Name
+          Value: "NRUG-demo-app"
+
+  ElasticIP:
+    Type: AWS::EC2::EIP
+    DeletionPolicy: Retain
+    Properties:
+      InstanceId: !Ref EC2Instance
+      Tags: 
+        - Key: Name
+          Value: "NRUG-demo-app"
