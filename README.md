@@ -11,7 +11,7 @@ EC2 Instanceの前提で進めますが、SSH接続ができるLinux環境であ
 t2.micro程度で問題ありません。
 EC2 instanceの場合はAmazon Linux2の前提で進めます。  
 EC2インスタンスのセットアップを行う[AWS CloudFormation](aws_cfn.yml)を提供します。
-必要に応じてご利用ください。
+必要に応じてご利用ください。EC2へのログインはSessionManagerから行う前提のものが作成されます。
 
 また、EC2費用はご自身でご負担ください。
 Macに直接インストールでも問題ないと思われます。その場合は適宜読み替えてください。
