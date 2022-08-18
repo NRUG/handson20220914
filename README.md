@@ -15,6 +15,7 @@ EC2インスタンスのセットアップを行うAWS CloudFormationを提供�
 Macに直接インストールでも問題ないと思われます。その場合は適宜読み替えてください。
 
 - New Relicに登録ができるメールアドレス
+FreeTier（無料枠）で完結する前提で進めます。FreeTierで登録するメールアドレスが必要です。
 
 ## 1 New Relicの登録
 [New Relicの登録](ch1.md)
