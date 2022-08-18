@@ -29,7 +29,7 @@ FreeTier（無料枠）で完結する前提で進めます。FreeTierで登録�
 ## 3 Djangoのセットアップ、New Relic Python agentのinstall
 [Djangoのセットアップ](ch3.md)
 ## 4 New Relic Python agent の説明
-[New Relic Python agent の説明とinstall](ch4.md)
+[New Relic Python agent の説明](ch4.md)
 ## 5 New Relicのコンソールを眺める
 [New Relicのコンソールを眺める](ch5.md)
 ## よくある質問
