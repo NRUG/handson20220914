@@ -5,10 +5,13 @@ NRUG (New Relic User Group) Vol.4 のハンズオン資料です
 
 ##  あらかじめ用意するもの
 - AWS EC2 Instance
-EC2 Instanceの前提で進めますが、SSH接続ができるLinux環境であればなんでも構いません。
+EC2 Instanceの前提で進めますが、SSH接続ができるLinux環境であればなんでも構いません。  
 t2.micro程度で問題ありません。
-EC2 instanceの場合はAmazonLinux2の前提で進めます。
-費用はご自身でご負担ください。
+EC2 instanceの場合はAmazonLinux2の前提で進めます。  
+EC2インスタンスのセットアップを行うAWS CloudFormationを提供します。
+必要に応じてご利用ください。
+
+また、EC2費用はご自身でご負担ください。
 Macに直接インストールでも問題ないと思われます。その場合は適宜読み替えてください。
 
 - New Relicに登録ができるメールアドレス
