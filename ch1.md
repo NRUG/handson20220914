@@ -1,5 +1,7 @@
 # New Relicの登録 
-## 1. https://newrelic.com/signup にアクセス。ユーザ名とメールアドレスを入力してサインアップ
+## 1. https://newrelic.com/signup にアクセス 
+### ユーザ名とメールアドレスを入力してサインアップ
+### 営業の連絡が不要な方はユーザ名 : NRUG_hogehogeと設定をお願いします！
 <p align="center">
   <img src="https://user-images.githubusercontent.com/60126571/187151799-a99b0bf0-ac2d-45bb-bc4f-e180998c857f.png" alt=“STEP3” width="400px">
 </p>
