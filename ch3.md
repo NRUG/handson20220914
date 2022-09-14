@@ -45,10 +45,13 @@ $ sqlite3 --version
 ```
 
 ## デモアプリの起動
+
+ALLOWED_HOSTSのIPアドレスの部分はEC2のPublic IPを指定します。
+
 ```
 $ cd ~/demoapp/
 $ vi demoapp/settings.py
-$ ALLOWED_HOSTS = ['35.78.205.93']
+$ ALLOWED_HOSTS = ['PublicIPアドレス']　
 
 $ python3 manage.py runserver 0.0.0.0:8000
 ```
