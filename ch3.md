@@ -13,8 +13,17 @@ $ cd demoapp/
 ## Python APM agentのインストール
 ```
 $ python3 -m pip install newrelic
-$ newrelic-admin generate-config 〜ライセンスキー〜 newrel
+$ newrelic-admin generate-config 〜ライセンスキー〜 newrelic.ini
 $ vi manage.py
+```
+
+以下をimport sys
+```
+import newrelic.agent
+newrelic.agent.initialize('newrelic.ini')
+```
+
+```
 $ python3 manage.py runserver
 ```
 
