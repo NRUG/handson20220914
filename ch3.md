@@ -23,10 +23,6 @@ import newrelic.agent
 newrelic.agent.initialize('newrelic.ini')
 ```
 
-```
-$ python3 manage.py runserver
-```
-
 ## SQLiteのアップデート
 amazon Linux2の場合、デフォルトではいるSQLiteが古いため、自分でコンパイルします。
 以下のコマンドを脳死でコピーして実行してください
