@@ -17,7 +17,7 @@ $ newrelic-admin generate-config 〜ライセンスキー〜 newrelic.ini
 $ vi manage.py
 ```
 
-以下をimport sys
+以下をimport sysの下に追記します
 ```
 import newrelic.agent
 newrelic.agent.initialize('newrelic.ini')
