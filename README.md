@@ -25,7 +25,7 @@ FreeTier（無料枠）で完結する前提で進めます。FreeTierで登録�
 ## 1 New Relicの登録
 [New Relicの登録](ch1.md)
 ## 2 New Relic infrastructure agentの説明とinstall
-[New Relic infrastructure agentの説明とinstall](ch2.md)
+[New Relic infrastructure agentの説明とinstall](docs/ch2.md)
 ## 3 Djangoのセットアップ、New Relic Python agentのinstall
 [Djangoのセットアップ](ch3.md)
 ## 4 New Relic Python agent の説明
