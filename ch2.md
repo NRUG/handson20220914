@@ -1,21 +1,24 @@
 # New Relic アカウントの初期設定
+
 新しく作成されたばかりのアカウントはガイド付きインストールの画面が表示されます。  
 このままInstallを開始する場合は画面の指示に従って、InstallCommandをコピーして実行します。
-![](https://github.com/qryuu/handson20220914/blob/main/ScreenShot/2022-09-19_19h30_55.png)
+![ガイド付きインストール画面](https://github.com/qryuu/handson20220914/blob/main/ScreenShot/2022-09-19_19h30_55.png)
 
 ガイド付きインストール画面で表示されるLicenseKeyは後から差し替える事ができません。  
 LicenseKeyのローテーションを行いたい場合は、ガイド付きインストール画面を抜けて、LicenseKeyの作成を行います。  
 `See other Option`をクリックするとガイド付きインストール画面が閉じます。
-![](https://github.com/qryuu/handson20220914/blob/main/ScreenShot/2022-09-19_19h30_39.png)
+![See other Optionをクリックする](https://github.com/qryuu/handson20220914/blob/main/ScreenShot/2022-09-19_19h30_39.png)
 
 # LicenseKeyの発行
+
 Userメニューを開き、API Keys をクリックします。
-![](https://github.com/qryuu/handson20220914/blob/main/ScreenShot/2022-09-19_19h31_52.png)
+![API Keysをクリックする](https://github.com/qryuu/handson20220914/blob/main/ScreenShot/2022-09-19_19h31_52.png)
 
 Create KeyをクリックしてLicenseKeyを作成します。
-![](https://github.com/qryuu/handson20220914/blob/main/ScreenShot/2022-09-19_19h32_27.png)
+![Create Keyをクリックする](https://github.com/qryuu/handson20220914/blob/main/ScreenShot/2022-09-19_19h32_27.png)
 
 ## Keyの種類
+
 - User Key 
   - NerdGraphやREST APIなどNRDBのData参照やNew Relicの操作を行う時に利用するKeyです。
 - Ingest - License
@@ -24,13 +27,14 @@ Create KeyをクリックしてLicenseKeyを作成します。
   - Browser AgentがDataをNew Relicに送る際に利用します。 WEBページのヘッダーとして公開される事を前提としているKeyです。
 
 Infrastructure AgentやAPM Agnetで利用するKeyは`Ingest - License` Keyです。
-![](https://github.com/qryuu/handson20220914/blob/main/ScreenShot/2022-09-19_19h32_46.png)
+![ingest - License を選択する](https://github.com/qryuu/handson20220914/blob/main/ScreenShot/2022-09-19_19h32_46.png)
 
 作成したKeyの三点リーダーメニューをから`Copy Key` をクリックして、Keyをコピーしておきます。
 コマンドの`license_key: YOUR_LICENSE_KEY` をこのコピーしたKeyに置き換えて実行します。
-![](https://github.com/qryuu/handson20220914/blob/main/2022-09-19_19h34_09.png)
+![Copy Key をクリックする](https://github.com/qryuu/handson20220914/blob/main/2022-09-19_19h34_09.png)
 
 # インストールメニューの表示
+
 UserメニューからAdd more data をクリックすると、ガイド付きインストールのメニューが表示されます。  
 今回のハンズオン以外の様々なAgentやIntegrationをインストールする場合はここからメニューを選択します。  
 ![](https://github.com/qryuu/handson20220914/blob/main/ScreenShot/2022-09-19_19h34_35.png)
@@ -38,6 +42,7 @@ UserメニューからAdd more data をクリックすると、ガイド付き�
 # インストール手順
 
 ## New Relicのライセンスキーを環境変数に入れます。
+
 YOUR_LICENS_KEYの部分を書き換えます
 
 ```
