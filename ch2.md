@@ -30,6 +30,10 @@ Infrastructure AgentやAPM Agnetで利用するKeyは`Ingest - License` Keyで�
 コマンドの`license_key: YOUR_LICENSE_KEY` をこのコピーしたKeyに置き換えて実行します。
 ![](https://github.com/qryuu/handson20220914/blob/main/2022-09-19_19h34_09.png)
 
+# インストールメニューの表示
+UserメニューからAdd more data をクリックすると、ガイド付きインストールのメニューが表示されます。  
+今回のハンズオン以外の様々なAgentやIntegrationをインストールする場合はここからメニューを選択します。  
+![](https://github.com/qryuu/handson20220914/blob/main/2022-09-19_19h34_35.png)
 
 # インストール手順
 
